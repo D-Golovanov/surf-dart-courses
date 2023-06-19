@@ -53,7 +53,7 @@ class AmountFilter implements Filter {
   bool apply(Product product) => product.amount < amount;
 }
 
-void applyFilter<T extends Filter>(List<Product> list, T filter) {
+void applyFilter(List<Product> list, Filter filter) {
   final filtredList = list.where((element) => filter.apply(element)).toList();
   for (var product in filtredList) {
     print(
